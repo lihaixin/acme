@@ -1,0 +1,2 @@
+# acme
+create cert auto
