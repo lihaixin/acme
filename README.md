@@ -5,7 +5,7 @@
 3. 云主机已经初始化，安装好docker环境
 ## 二、申请证书
 
-这里推荐使用[acme.sh 接口](https://github.com/acmesh-official/acme.sh/wiki/dnsapi ?fileGuid=jp96tvppvDdckWDJ)申请证书
+这里推荐使用[acme.sh 接口](https://github.com/acmesh-official/acme.sh/wiki/dnsapi)申请证书
 
 1. 优势：目前提供多达131家域名管理提供商，支持泛域名证书申请
 2. 国内：阿里云、腾讯云、
