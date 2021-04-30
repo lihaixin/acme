@@ -1,8 +1,8 @@
 FROM alpine:3.12
 ENV TZ=Asia/Shanghai
 ENV DOMAIN=youdomain.com
-ENV DP_Id=126692
-ENV DP_Key=46355cda964d7712e71cc370d319f440
+ENV Ali_Key="sdfsdfsdfljlbjkljlkjsdfoiwje"
+ENV Ali_Secret="jlsdflanljkljlfdsaklkjflsa"
 
 RUN set -ex \
 	&& apk add --no-cache tzdata ca-certificates unzip wget curl nginx openssl socat
