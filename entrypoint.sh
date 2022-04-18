@@ -5,6 +5,7 @@ export PATH
 install_cert() {
 mkdir -p /etc/cert/$DOMAIN
 curl https://get.acme.sh | sh
+. .bashrc
 ~/.acme.sh/acme.sh --set-default-ca  --server  letsencrypt
 ~/.acme.sh/acme.sh  --debug --issue --dns dns_cf -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
