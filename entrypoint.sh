@@ -14,4 +14,5 @@ curl https://get.acme.sh | sh
 if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
   install_cert
 fi
+crond
 while true; do sleep 1; done;
