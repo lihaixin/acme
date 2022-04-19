@@ -3,7 +3,7 @@ ENV TZ=Asia/Shanghai
 ENV DOMAIN=youdomain.com
 
 RUN set -ex \
-	&& apk add --no-cache tzdata ca-certificates unzip wget curl nginx openssl socat
+	&& apk add --no-cache tzdata ca-certificates unzip wget curl nginx openssl socat bash dcron
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
