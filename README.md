@@ -1,3 +1,9 @@
+# 构建镜像
+
+```
+docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme . --push
+```
+
 ## 一、准备主机
 
 1. 在域名管理界面做A记录到云主机IP(方便域名访问)
