@@ -30,7 +30,7 @@ export https_proxy=$http_proxy
 ## 一、准备主机
 
 1. 在域名管理界面做A记录到云主机IP(方便域名访问)
-2. 同时最子域名泛别名到A记录（可选择）
+2. 同时做子域名泛别名到A记录（可选择）
 3. 云主机已经初始化，安装好docker环境
 ## 二、申请证书
 
@@ -44,7 +44,7 @@ export https_proxy=$http_proxy
 
 ### 1.1管理权限在Cloudflare
 
-推荐域名管理在国外其他平台，都可以把管理平台转到cf上管理，支持免费CDN
+推荐域名申请在国外其他平台，把管理平台转到cf上管理，支持免费CDN
 
 先登录[cloudflare](https://dash.cloudflare.com/profile/api-tokens?fileGuid=jp96tvppvDdckWDJ)查看帐号全局KEY
 
