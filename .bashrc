@@ -39,8 +39,10 @@ fi
 fi
 echo -e " # $DOCKERID 容器支持各类域名提供商免费安装泛域名证书 "
 echo -e " # $DOCKERID 容器默认已提供国内外常见的域名提供商证书申请"
-echo -e " # $DOCKERID 更多内容请访问：https://hub.docker.com/r/lihaixin/acme "
 echo -e " # 测试下载带宽:  使用< speed | speedcn > 重启程序:  使用< acmereboot >"
+echo -e " # "
+echo -e " # 更多信息访问网页查看： https://hub.docker.com/r/lihaixin/acme "
+
 echo " # -------------------------------------------------------------------------------------------------------------- #"
 if [ -f "/etc/member" ]; then
 echo " # "
