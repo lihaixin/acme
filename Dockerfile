@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.15
 ENV TZ=Asia/Shanghai
 ENV DOMAIN=youdomain.com
 ENV CF_Email=info@youdomain.com
