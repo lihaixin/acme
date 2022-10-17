@@ -1,7 +1,4 @@
-# acme
-create cert auto
-
-# 构建镜像
+## 构建镜像
 
 
 ```
