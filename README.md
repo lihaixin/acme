@@ -13,10 +13,13 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme . --push
 |:----|:----:|:----:|:----:|:----|:----|:----|
 |PLAN|TYPE|DNS|DOMAIN|ID|KEY|备注|
 |1|letsencrypt/zerossl|dns_cf|youdomain.com|CF_Email=ID|CF_Key=KEY|申请cloudflare.com泛域名证书|
-|2|letsencrypt/zerossl|dns_dp|youdomain.com|DP_Id=ID|DP_Key=KEY|申请DNSPod.cn泛域名证书|
-|3|letsencrypt/zerossl|dns_ali|youdomain.com|Ali_Key=ID|Ali_Secret=KEY|申请Aliyun.com泛域名证书|
+|2|letsencrypt/zerossl|dns_namecom|youdomain.com|Namecom_Username=ID|Namecom_Token=KEY|申请Name.com泛域名证书|
+|3|letsencrypt/zerossl|dns_gd|youdomain.com|GD_Key=ID|GD_Secret=KEY|申请GoDaddy.com泛域名证书|
 |4|letsencrypt/zerossl|dns_namesilo|youdomain.com||Namesilo_Key=KEY|申请Namesilo.com泛域名证书|
-|5|letsencrypt/zerossl||hostname.youdomain.com|||申请任何平台单域名证书|
+|5|letsencrypt/zerossl|dns_dp|youdomain.com|DP_Id=ID|DP_Key=KEY|申请DNSPod.cn泛域名证书|
+|6|letsencrypt/zerossl|dns_ali|youdomain.com|Ali_Key=ID|Ali_Secret=KEY|申请Aliyun.com泛域名证书|
+|7|letsencrypt/zerossl||hostname.youdomain.com|||申请任何平台单域名证书|
+|8|letsencrypt/zerossl|||||登陆终端自定义申请证书|
 ```
 export http_proxy=http://<ip/name>:<port>
 export https_proxy=$http_proxy
