@@ -19,7 +19,6 @@ alias h='cd ~;clear;'
 
 alias speed='time curl -o /dev/null http://cachefly.cachefly.net/100mb.test'
 alias speedcn='time curl -o /dev/null http://dldir1.qq.com/qqfile/qq/QQ9.0.8/24201/QQ9.0.8.24201.exe'
-alias acmelogs='tail -F /conf/np*.log'
 alias acmereboot='pkill -s 1;sleep 1;pkill -s 1'
 alias reboot='pkill -s 1;sleep 1;pkill -s 1'
 
@@ -41,7 +40,7 @@ fi
 echo -e " # $DOCKERID 容器支持各类域名提供商免费安装泛域名证书 "
 echo -e " # $DOCKERID 容器默认已提供国内外常见的域名提供商证书申请"
 echo -e " # $DOCKERID 更多内容请访问：https://hub.docker.com/r/lihaixin/acme "
-echo -e " # 测试下载带宽:  使用< speed | speedcn > 查看日志:  使用< npslogs > 重启程序:  使用< acmereboot >"
+echo -e " # 测试下载带宽:  使用< speed | speedcn > 重启程序:  使用< acmereboot >"
 echo " # -------------------------------------------------------------------------------------------------------------- #"
 if [ -f "/etc/member" ]; then
 echo " # "
