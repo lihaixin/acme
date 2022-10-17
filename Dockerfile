@@ -3,6 +3,7 @@ ENV TZ=Asia/Shanghai
 ENV TYPE=letsencrypt
 ENV DNS=dns_cf
 ENV DOMAIN=youdomain.com
+ENV aliasDOMAIN=
 ENV ID=info@youdomain.com
 ENV KEY=558ef6820cea14627f986548c96fcb6cb****
 
