@@ -42,12 +42,27 @@ fi
 
 if [ "$DNS" == "dns_namesilo" ]; then
 Namesilo_Key=$KEY
-~/.acme.sh/acme.sh  --issue --dns dns_namesilo --dnssleep 900 -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+~/.acme.sh/acme.sh  --debug --issue --dns $DNS --dnssleep 900 -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
 
-if [ "$DNS" == "" ]; then
-~/.acme.sh/acme.sh  --issue  -d $DOMAIN --standalone
+if [ "$DNS" == "dns_namecom" ]; then
+Namecom_Username=$ID
+Namecom_Token=$KEY
+~/.acme.sh/acme.sh  --debug --issue --dns $DNS  -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+~/.acme.sh/acme.sh --upgrade --auto-upgrade
+fi
+
+if [ "$DNS" == "dns_gd" ]; then
+GD_Key=$ID
+GD_Secret=$KEY
+~/.acme.sh/acme.sh  --debug --issue --dns $DNS  -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+~/.acme.sh/acme.sh --upgrade --auto-upgrade
+fi
+
+
+if [[ "$DNS" == "" ]] && [[ "$DOMAIN" != "" ]]; then
+~/.acme.sh/acme.sh  --debug --issue  -d $DOMAIN --standalone
 ~/.acme.sh/acme.sh --installcert -d $DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
