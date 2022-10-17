@@ -16,7 +16,11 @@ if
 if [ "$DNS" == "dns_cf" ]; then
 CF_Email=$ID
 CF_Key=$KEY
+if [ "$aliasDOMAIN" == ""]; then
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+~/.acme.sh/acme.sh --upgrade --auto-upgrade
+else
+~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --challenge-alias $aliasDOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
 
