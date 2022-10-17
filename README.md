@@ -12,7 +12,7 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme . --push
 |方案|CERT提供商|DNS提供商|申请DOMAIN|ID|KEY|备注|
 |:----|:----:|:----:|:----:|:----|:----|:----|
 |PLAN|TYPE|DNS|DOMAIN|ID|KEY|备注|
-|1|letsencrypt/zerossl|dns_cf|youdomain.com|CF_Email=ID|CF_Key=KEY|申请cloudflare.com泛域名证书|
+|1|letsencrypt/zerossl|dns_cf|youdomain.com  aliasDOMAIN.com|CF_Email=ID|CF_Key=KEY|申请cloudflare.com泛域名证书|
 |2|letsencrypt/zerossl|dns_namecom|youdomain.com|Namecom_Username=ID|Namecom_Token=KEY|申请Name.com泛域名证书|
 |3|letsencrypt/zerossl|dns_gd|youdomain.com|GD_Key=ID|GD_Secret=KEY|申请GoDaddy.com泛域名证书|
 |4|letsencrypt/zerossl|dns_namesilo|youdomain.com||Namesilo_Key=KEY|申请Namesilo.com泛域名证书|
