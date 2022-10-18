@@ -20,6 +20,8 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme . --push
 |6|letsencrypt  zerossl*|dns_ali|youdomain.com|Ali_Key=ID|Ali_Secret=KEY|申请Aliyun.com泛域名证书|
 |7|letsencrypt  zerossl*||hostname.youdomain.com|||申请任何平台单域名证书|
 |8|letsencrypt  zerossl*|||||登陆终端自定义申请证书|
+
+## 国内环境申请成功有困难
 ```
 export http_proxy=http://<ip/name>:<port>
 export https_proxy=$http_proxy
