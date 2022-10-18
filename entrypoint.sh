@@ -6,6 +6,11 @@ if [ -f "/etc/envfile" ]; then
 export $(grep -v '^#' /etc/envfile | xargs)
 fi
 
+if [ "$HTTP_PROXY" != "" ]; then
+export http_proxy=$HTTP_PROXY
+export https_proxy=$http_proxy
+fi
+
 install_cert() {
 mkdir -p /etc/cert/$DOMAIN
 curl https://get.acme.sh | sh
