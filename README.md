@@ -50,7 +50,7 @@ export https_proxy=$http_proxy
 
 先登录[cloudflare](https://dash.cloudflare.com/profile/api-tokens?fileGuid=jp96tvppvDdckWDJ)查看帐号全局KEY
 
-![图片](https://uploader.shimo.im/f/ownh1keQB5TDzHn3.png!thumbnail?fileGuid=jp96tvppvDdckWDJ)
+![图片](https://raw.githubusercontent.com/lihaixin/acme/main/cf.png)
 
 ```shell
 docker run -itd  \
@@ -71,7 +71,7 @@ docker logs acme.sh.cf
 
 登录管理地址[https://console.dnspod.cn/account/token](https://console.dnspod.cn/account/token?fileGuid=jp96tvppvDdckWDJ)申请
 
-![图片](https://uploader.shimo.im/f/a70gRTTjKiMR7Cge.png!thumbnail?fileGuid=jp96tvppvDdckWDJ)
+![图片](https://raw.githubusercontent.com/lihaixin/acme/main/dp.png)
 
 ```plain
 docker run -itd  \
@@ -92,7 +92,7 @@ docker logs acme.dp
 
 申请地址：[https://ak-console.aliyun.com/#/accesskey](https://ak-console.aliyun.com/#/accesskey?fileGuid=jp96tvppvDdckWDJ)
 
-![图片](https://uploader.shimo.im/f/t9ThefXH1CjNpSOI.png!thumbnail?fileGuid=jp96tvppvDdckWDJ)
+![图片](https://raw.githubusercontent.com/lihaixin/acme/main/ali.png)
 
 ```plain
 docker run -itd  \
