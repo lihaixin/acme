@@ -2,7 +2,7 @@
 
 
 ```
-docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme . --push
+docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme https://github.com/lihaixin/acme.git --push
 
 ```
 # [acme](https://github.com/acmesh-official/acme.sh)
