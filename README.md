@@ -55,11 +55,12 @@ docker run -itd  \
   --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
+  -e type=dnc_cf \
   -e DOMAIN="youdomain.com" \
   -e CF_Email="info@youdomain.com" \
   -e CF_Key="558ef6820cea14627f986548c96fcb6cb××××" \
   --name=acme.cf \
-  lihaixin/acme:cf
+  lihaixin/acme
  
 #查看生成过程 
 docker logs acme.sh.cf
@@ -75,11 +76,12 @@ docker run -itd  \
   --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
+  -e type=dnc_dp \
   -e DOMAIN="youdomain.com" \
   -e DP_Id="1266××" \
   -e DP_Key="46355cda964d7712e71cc370d319××××" \
   --name=acme.dp \
-  lihaixin/acme:dp
+  lihaixin/acme
   
 #查看生成过程  
 docker logs acme.dp
@@ -95,11 +97,12 @@ docker run -itd  \
   --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
+  -e type=dnc_ali \
   -e DOMAIN="youdomain.com" \
   -e Ali_Key="sdfsdfsdfljlbjkljlkjsdfoiwje" \
   -e Ali_Secret="jlsdflanljkljlfdsaklkjflsa" \
   --name=acme.ali \
-  lihaixin/acme:ali
+  lihaixin/acme
   
 #查看生成过程  
 docker logs acme.ali
