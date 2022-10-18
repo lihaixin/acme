@@ -8,6 +8,11 @@ if [ -f "/etc/envfile" ]; then
 export $(grep -v '^#' /etc/envfile | xargs)
 fi
 
+if [ "$HTTP_PROXY" != "" ]; then
+export http_proxy=$HTTP_PROXY
+export https_proxy=$http_proxy
+fi
+
 # Aliases
 alias l='ls -lAsh --color'
 alias ls='ls -C1 --color'
