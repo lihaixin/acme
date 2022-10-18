@@ -1,11 +1,10 @@
 #!/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
+export PATH;ntp
 
-if [ "$HTTP_PROXY" != "" ]; then
-export http_proxy=$HTTP_PROXY
-export https_proxy=$HTTP_PROXY
-if
+if [ -f "/etc/envfile" ]; then
+export $(grep -v '^#' /etc/envfile | xargs)
+fi
 
 install_cert() {
 mkdir -p /etc/cert/$DOMAIN
