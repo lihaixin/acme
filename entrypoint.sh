@@ -9,6 +9,7 @@ fi
 if [ "$HTTP_PROXY" != "" ]; then
 export http_proxy=$HTTP_PROXY
 export https_proxy=$http_proxy
+sleep 5
 fi
 
 install_cert() {
