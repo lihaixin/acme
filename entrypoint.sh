@@ -11,10 +11,7 @@ export http_proxy=$HTTP_PROXY
 export https_proxy=$http_proxy
 fi
 
-
-
 install_cert() {
-set -e
 mkdir -p /etc/cert/$DOMAIN
 curl https://get.acme.sh | sh
 
@@ -86,7 +83,7 @@ fi
 
 # 查看证书，没有就自动创建
 if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
-  install_cert
+ # install_cert
 fi
 crond
 while true; do sleep 1; done;
