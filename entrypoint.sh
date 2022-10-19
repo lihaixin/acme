@@ -56,9 +56,6 @@ if [ "$DNS" == "dns_namesilo" ]; then
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
 
-
-
-
 if [ "$DNS" == "dns_dp" ]; then
 : ${DP_Id:=$ID}
 : ${DP_Key:=$KEY}
@@ -72,7 +69,6 @@ if [ "$DNS" == "dns_ali" ]; then
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
-
 
 if [[ "$DNS" == "" ]] && [[ "$DOMAIN" != "" ]]; then
 ~/.acme.sh/acme.sh  --debug --issue  -d $DOMAIN --standalone
