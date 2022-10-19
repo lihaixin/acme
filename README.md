@@ -54,7 +54,6 @@ export https_proxy=$http_proxy
 
 ```shell
 docker run -itd  \
-  --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
   -e type=dnc_cf \
@@ -75,7 +74,6 @@ docker logs acme.sh.cf
 
 ```plain
 docker run -itd  \
-  --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
   -e type=dnc_dp \
@@ -96,7 +94,6 @@ docker logs acme.dp
 
 ```plain
 docker run -itd  \
-  --net=host \
   --restart always \
   -v /etc/cert:/etc/cert \
   -e type=dnc_ali \
@@ -115,7 +112,7 @@ docker logs acme.ali
 
 ```shell
 docker run -itd  \
-  --net=host \
+  -p 80:80 \
   --restart always \
   -v /etc/cert:/etc/cert \
   -e DOMAIN=new161.youdomain.com \
