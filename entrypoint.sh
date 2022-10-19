@@ -11,10 +11,10 @@ export http_proxy=$HTTP_PROXY
 export https_proxy=$http_proxy
 fi
 
-set +e
+
 
 install_cert() {
-
+set -e
 mkdir -p /etc/cert/$DOMAIN
 curl https://get.acme.sh | sh
 
@@ -82,7 +82,6 @@ if [ "$DNS" == "" ]; then
   ~/.acme.sh/acme.sh --upgrade --auto-upgrade
   fi
 fi
-
 }
 
 # 查看证书，没有就自动创建
