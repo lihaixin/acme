@@ -12,7 +12,7 @@ RUN set -ex \
 	&& apk add --no-cache tzdata \
 	ca-certificates \
 	unzip wget curl \
-	openssl socat \
+	nginx openssl socat \
 	dcron bash \
 	openssl \
         openssh-client \
