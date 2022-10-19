@@ -1,6 +1,8 @@
 FROM --platform=${TARGETPLATFORM} lihaixin/base:3.15
 
 ENV TZ=Asia/Shanghai
+ENV DOCKERID=ACME
+
 ENV TYPE=letsencrypt
 ENV DNS=dns_cf
 ENV DOMAIN=youdomain.com
