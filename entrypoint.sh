@@ -20,6 +20,7 @@ curl https://get.acme.sh | sh
 if [ "$TYPE" == "letsencrypt" ]; then
 ~/.acme.sh/acme.sh --set-default-ca  --server  letsencrypt
 if
+
 if [ "$TYPE" == "zerossl" ]; then
 ~/.acme.sh/acme.sh --register-account -m $ID
 if
@@ -33,6 +34,7 @@ if [ "$aliasDOMAIN" == ""]; then
 else
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --challenge-alias $aliasDOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+fi
 fi
 
 
