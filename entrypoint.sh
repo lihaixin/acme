@@ -12,6 +12,7 @@ export https_proxy=$http_proxy
 fi
 
 install_cert() {
+
 mkdir -p /etc/cert/$DOMAIN
 curl https://get.acme.sh | sh
 
@@ -26,15 +27,15 @@ if [ "$TYPE" == "zerossl" ]; then
 if
 
 if [ "$DNS" == "dns_cf" ]; then
-: ${CF_Email:=$ID}
-: ${CF_Key:=$KEY}
-if [ "$aliasDOMAIN" == ""]; then
-~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
-~/.acme.sh/acme.sh --upgrade --auto-upgrade
-else
-~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --challenge-alias $aliasDOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
-~/.acme.sh/acme.sh --upgrade --auto-upgrade
-fi
+  : ${CF_Email:=$ID}
+  : ${CF_Key:=$KEY}
+  if [ "$aliasDOMAIN" == ""]; then
+  ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+  ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+  else
+  ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --challenge-alias $aliasDOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+  ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+  fi
 fi
 
 
@@ -72,10 +73,12 @@ if [ "$DNS" == "dns_ali" ]; then
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
 
-if [[ "$DNS" == "" ]] && [[ "$DOMAIN" != "" ]]; then
-~/.acme.sh/acme.sh  --debug --issue  -d $DOMAIN --standalone
-~/.acme.sh/acme.sh --installcert -d $DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
-~/.acme.sh/acme.sh --upgrade --auto-upgrade
+if [ "$DNS" == "" ]; then
+  if [ "$DOMAIN" != "" ]; then
+  ~/.acme.sh/acme.sh  --debug --issue  -d $DOMAIN --standalone
+  ~/.acme.sh/acme.sh --installcert -d $DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
+  ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+  fi
 fi
 }
 
