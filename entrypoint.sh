@@ -11,6 +11,8 @@ export http_proxy=$HTTP_PROXY
 export https_proxy=$http_proxy
 fi
 
+set +e
+
 install_cert() {
 
 mkdir -p /etc/cert/$DOMAIN
