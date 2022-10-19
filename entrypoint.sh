@@ -26,6 +26,7 @@ fi
 if [ "$DNS" == "dns_cf" ]; then
   : ${CF_Email:=$ID}
   : ${CF_Key:=$KEY}
+  export CF_Email CF_Key
   if [ "$aliasDOMAIN" == ""]; then
   ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
   ~/.acme.sh/acme.sh --upgrade --auto-upgrade
@@ -38,6 +39,7 @@ fi
 if [ "$DNS" == "dns_namecom" ]; then
 : ${Namecom_Username:=$ID}
 : ${Namecom_Token:=$KEY}
+export Namecom_Username Namecom_Token
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS  -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
@@ -45,12 +47,14 @@ fi
 if [ "$DNS" == "dns_gd" ]; then
 : ${GD_Key:=$ID}
 : ${GD_Secret:=$KEY}
+export GD_Key GD_Secret
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS  -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
 
 if [ "$DNS" == "dns_namesilo" ]; then
 : ${Namesilo_Key:=$KEY}
+export Namesilo_Key
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS --dnssleep 900 -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
@@ -58,6 +62,7 @@ fi
 if [ "$DNS" == "dns_dp" ]; then
 : ${DP_Id:=$ID}
 : ${DP_Key:=$KEY}
+export DP_Id DP_Key
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
@@ -65,6 +70,7 @@ fi
 if [ "$DNS" == "dns_ali" ]; then
 : ${Ali_Key:=$ID}
 : ${Ali_Secret:=$KEY}
+export Ali_Key Ali_Secret
 ~/.acme.sh/acme.sh  --debug --issue --dns $DNS -d $DOMAIN -d *.$DOMAIN --key-file /etc/cert/$DOMAIN/private.key --fullchain-file /etc/cert/$DOMAIN/fullchain.crt
 ~/.acme.sh/acme.sh --upgrade --auto-upgrade
 fi
