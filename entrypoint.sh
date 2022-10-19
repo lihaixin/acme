@@ -90,4 +90,8 @@ if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
  install_cert
 fi
 crond
-while true; do sleep 1; done;
+# while true; do sleep 1; done;
+
+trap "echo stop && killall crond && exit 0" SIGTERM SIGINT SIGQUIT
+sleep infinity &
+wait
