@@ -23,8 +23,8 @@ docker buildx build --platform linux/arm64,linux/amd64 -t lihaixin/acme https://
 
 ## 国内环境申请成功有困难
 ```
-export http_proxy=http://<ip/name>:<port>
-export https_proxy=$http_proxy
+# 运行时候添加代理
+-e HTTP_PROXY=http://<proxyip>:<proxyport>
 ```
 
 
