@@ -80,6 +80,7 @@ if [ "$DNS" == "" ]; then
   ~/.acme.sh/acme.sh --upgrade --auto-upgrade
   fi
 fi
+
 }
 
 # 查看证书，没有就自动创建
