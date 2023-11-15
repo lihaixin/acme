@@ -49,10 +49,8 @@ echo -e " # "
 echo -e " # 更多信息访问网页查看： https://hub.docker.com/r/lihaixin/acme "
 
 echo " # -------------------------------------------------------------------------------------------------------------- #"
-if [ -f "/etc/member" ]; then
-echo " # "
-QQ=`cat /etc/envfile | grep QQ | awk -F "=" '{ print $2}'`
-echo " # 技术支持QQ: $QQ"
+if [ -f "/etc/expired" ]; then
+/usr/bin/member.sh
 fi
 echo -e -n '\E[1;34m'
 echo -e '\E[0m'
