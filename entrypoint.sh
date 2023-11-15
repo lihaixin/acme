@@ -21,7 +21,7 @@ if [ "$TYPE" == "letsencrypt" ]; then
 fi
 
 if [ "$TYPE" == "zerossl" ]; then
-~/.acme.sh/acme.sh --register-account -m $ID --server zerossl
+~/.acme.sh/acme.sh --register-account -m acme@15099.net --server zerossl
 fi
 
 if [ "$DNS" == "dns_cf" ]; then
