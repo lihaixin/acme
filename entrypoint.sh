@@ -87,7 +87,7 @@ fi
 }
 
 # 查看证书，没有就自动创建
-if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
+if [ ! -f "/etc/cert/$DOMAIN/private.key" ]; then
  install_cert
 fi
 crond
