@@ -1,15 +1,15 @@
 #!/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH;entry || exit 1
+export PATH
+export TERM=xterm-256color
+PREFIX="["
+SUFFIX="]"
+export TIME_FORMAT="${PREFIX}$(date +'%Y-%m-%d %H:%M')${SUFFIX}"
+source /usr/bin/debug_utils.sh
+: ${DEBUG:=1}
 
 if [ -f "/etc/envfile" ]; then
-export $(grep -v '^#' /etc/envfile | xargs)
-fi
-
-if [ "$HTTP_PROXY" != "" ]; then
-export http_proxy=$HTTP_PROXY
-export https_proxy=$http_proxy
-sleep 5
+source /etc/envfile
 fi
 
 install_cert() {
@@ -85,7 +85,7 @@ if [ "$DNS" == "" ]; then
   fi
 fi
 }
-
+entry || exit 1
 # 查看证书，没有就自动创建
 if [ ! -f "/etc/cert/$DOMAIN/private.key" ]; then
  install_cert
