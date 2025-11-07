@@ -5,12 +5,7 @@ if [ -t 1 ]; then
 fi
 
 if [ -f "/etc/envfile" ]; then
-export $(grep -v '^#' /etc/envfile | xargs)
-fi
-
-if [ "$HTTP_PROXY" != "" ]; then
-export http_proxy=$HTTP_PROXY
-export https_proxy=$http_proxy
+source /etc/envfile
 fi
 
 # Aliases
@@ -34,23 +29,14 @@ IP=$(curl -s  ip.sb)
 echo -e -n '\E[1;34m'
 figlet -k -f big -c -m-1 -w 120 "Welcome `hostname`"
 echo " # -------------------------------------------------------------------------------------------------------------- #"
-if [ -f "/etc/member" ]; then
-MEMBER=`cat /etc/member`
-if [ "$MEMBER" == "0" ]; then
-echo " # `cat /etc/npsnotice` "
-else
+echo " # `cat /tmp/npsnotice` "
 echo " # 容器ID： `cat /etc/dockerid` "
-fi
-fi
-echo -e " # $DOCKERID 容器支持各类域名提供商免费安装泛域名证书 "
-echo -e " # $DOCKERID 容器默认已提供国内外常见的域名提供商证书申请"
-echo -e " # 测试下载带宽:  使用< speed | speedcn > 重启程序:  使用< acmereboot >"
-echo -e " # "
-echo -e " # 更多信息访问网页查看： https://hub.docker.com/r/lihaixin/acme "
+echo " # "
+echo " # 更多信息访问网页查看： https://hub.docker.com/r/lihaixin/acme "
 
 echo " # -------------------------------------------------------------------------------------------------------------- #"
-if [ -f "/etc/expired" ]; then
-/usr/bin/member.sh
+if [ -f "/etc/tty" ]; then
+/usr/bin/tty_server.sh
 fi
 echo -e -n '\E[1;34m'
 echo -e '\E[0m'
