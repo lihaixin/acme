@@ -1,4 +1,4 @@
-FROM --platform=${TARGETPLATFORM} lihaixin/base:3.16
+FROM --platform=${TARGETPLATFORM} lihaixin/base:3.16.20251029
 
 ENV TZ=Asia/Shanghai
 ENV DOCKERID=acme
